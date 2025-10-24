@@ -20,7 +20,7 @@
           </div>
           <div class="col text-center">
             <div class="p-3">
-              <h1>Ballance $<span>1000</span></h1>
+              <h1>Ballance $<span id="span-balance"></span></h1>
             </div>
           </div>
         </div>
@@ -37,7 +37,7 @@
                   >
                   <select class="form-select" id="inputGroupSelect01">
                     <option selected>Choose...</option>
-                    <option value="1">Salery</option>
+                    <option value="1">Salary</option>
                     <option value="2">Gift</option>
                     <option value="3">Other Income</option>
                   </select>
@@ -48,10 +48,15 @@
                     <input
                       type="text"
                       class="form-control"
+                      id="income-input"
                       aria-label="Sizing example input"
                       aria-describedby="inputGroup-sizing-sm"
                     />
-                    <button type="button" class="btn btn-primary">
+                    <button
+                      type="button"
+                      class="btn btn-primary"
+                      id="button-income"
+                    >
                       Confirm
                     </button>
                   </div>
@@ -65,7 +70,7 @@
                   <label class="input-group-text" for="inputGroupSelect01"
                     >Choose your option</label
                   >
-                  <select class="form-select" id="inputGroupSelect01">
+                  <select class="form-select" id="inputGroupSelect02">
                     <option selected>Choose...</option>
                     <option value="1">Food</option>
                     <option value="2">Shopping</option>
@@ -78,11 +83,16 @@
                     >
                     <input
                       type="text"
+                      id="outcome-input"
                       class="form-control"
                       aria-label="Sizing example input"
                       aria-describedby="inputGroup-sizing-sm"
                     />
-                    <button type="button" class="btn btn-primary">
+                    <button
+                      type="button"
+                      class="btn btn-primary"
+                      id="button-outcome"
+                    >
                       Confirm
                     </button>
                   </div>
@@ -93,7 +103,16 @@
         </div>
       </div>
       <div class="container">
-        <h1>History</h1>
+        <div class="wrap-h">
+          <h1>History</h1>
+        </div>
+        <div class="list">
+          <ol class="list-group list-group-numbered">
+            <!-- <li class="list-group-item">A list item</li>
+            <li class="list-group-item">A list item</li>
+            <li class="list-group-item">A list item</li> -->
+          </ol>
+        </div>
       </div>
     </div>
 
@@ -102,5 +121,9 @@
       integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
       crossorigin="anonymous"
     ></script>
+
+    <script src="/js/model.js"></script>
+    <script src="/js/view.js"></script>
+    <script src="/js/controller.js"></script>
   </body>
 </html>
