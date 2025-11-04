@@ -11,3 +11,12 @@ function handleOutcome(name, amount) {
   renderBalance(balance)
   renderBoxOutcome()
 }
+
+function handleControlHistoryIncome(arrayIncome) {
+  renderHistoryListIncome(arrayIncome)
+  history()
+}
+
+function handleControlHistoryOutcome(arrayOutcome) {
+  renderHistoryListOutcome(arrayOutcome)
+}

@@ -23,6 +23,23 @@ function generateHistoryList(sum) {
   elLi.classList.add('list-group-item')
   return elLi
 }
+
+function renderHistoryListIncome(arrays) {
+  const elOl = document.querySelector('ol-history')
+  elOl.innerHTML = ''
+  for (const array of arrays) {
+    const elLi = generateHistoryList(array)
+    elOl.appendChild(elLi)
+  }
+}
+function renderHistoryListOutcome(arrays) {
+  const elOl = document.querySelector('ol-history')
+  elOl.innerHTML = ''
+  for (const array of arrays) {
+    const elLi = generateHistoryList(array)
+    elOl.appendChild(elLi)
+  }
+}
 // function onInputTextIncome(e) {
 //   const incomeNum = e.target.value
 //   console.log(incomeNum)
