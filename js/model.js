@@ -7,16 +7,18 @@ const outcomes = []
 const transactions = []
 
 function createIncome(category, amount) {
-  const income = { category: category, amount: amount }
+  const income = { category, amount, type: 'Income' }
   incomes.push(income)
+  transactions.push(income) // добавляем в общий массив
   updateBalanceAfterIncome(amount)
 }
+
 function createOutcome(category, amount) {
-  const outcome = { category: category, amount: amount }
+  const outcome = { category, amount, type: 'Outcome' }
   outcomes.push(outcome)
+  transactions.push(outcome)
   updateBalanceAfterOutcome(amount)
 }
-
 function updateBalanceAfterIncome(amount) {
   balance += amount
 }
@@ -25,23 +27,23 @@ function updateBalanceAfterOutcome(amount) {
 }
 
 // ??
-function history(array) {
-  return array.reduce((acc, item) => acc + item.amount, 0)
-}
+// function history(array) {
+//   return array.reduce((acc, item) => acc + item.amount, 0)
+// }
 
 /**
  * ТЕСТЫ:
  */
 
-incomes
-createIncome('зарплата', 42)
-incomes
-balance
+// incomes
+// createIncome('зарплата', 42)
+// incomes
+// balance
 
-outcomes
-createOutcome('конфеты', 33)
-outcomes
-balance
+// outcomes
+// createOutcome('конфеты', 33)
+// outcomes
+// balance
 
-console.log(history(incomes))
-console.log(history(outcomes))
+// console.log(history(incomes))
+// console.log(history(outcomes))

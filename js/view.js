@@ -17,54 +17,53 @@ function renderBoxOutcome() {
   elSelect.selectedIndex = 0
 }
 
-function generateHistoryList(sum) {
+function generateHistoryList({ type, category, amount }) {
   const elLi = document.createElement('li')
-  elLi.textContent = sum
+  elLi.textContent = `${type}: ${category}, Amount: ${amount}`
   elLi.classList.add('list-group-item')
   return elLi
 }
 
-function renderHistoryListIncome(arrays) {
+function renderHistoryListIncome(incomes) {
   const elOl = document.querySelector('ol-history')
   elOl.innerHTML = ''
-  for (const array of arrays) {
-    const elLi = generateHistoryList(array)
+  for (const income of incomes) {
+    const elLi = generateHistoryList(income)
     elOl.appendChild(elLi)
   }
 }
-function renderHistoryListOutcome(arrays) {
-  const elOl = document.querySelector('ol-history')
-  elOl.innerHTML = ''
-  for (const array of arrays) {
-    const elLi = generateHistoryList(array)
+
+function renderHistory() {
+  const elOl = document.querySelector('#ol-history')
+  elOl.innerHTML = '' // очищаем
+
+  transactions.forEach((transaction, index) => {
+    const elLi = generateHistoryList({
+      type: transaction.type,
+      category: transaction.category,
+      amount: transaction.amount,
+    })
+    elLi.textContent = `${index + 1}. ${elLi.textContent}` // нумеруем
     elOl.appendChild(elLi)
-  }
+  })
 }
-// function onInputTextIncome(e) {
-//   const incomeNum = e.target.value
-//   console.log(incomeNum)
-// }
-// function onInputTextOutcome(e) {
-//   const outcomeNum = e.target.value
-//   console.log(outcomeNum)
-// }
+
 function onClickConfirmIncome() {
   const elInputIncome = document.querySelector('#income-input')
   const sum = elInputIncome.value
   const elSelect = document.querySelector('#inputGroupSelect01')
-  const selectedValue = elSelect.value
   const name = elSelect.options[elSelect.selectedIndex].text
-  handleIncome(name, sum)
+
+  handleIncome(name, sum) // передаём имя и сумму
 }
-function onClickConfirmOutcome(e) {
+function onClickConfirmOutcome() {
   const elInputOutcome = document.querySelector('#outcome-input')
   const sum = elInputOutcome.value
   const elSelect = document.querySelector('#inputGroupSelect02')
-  const selectedValue = elSelect.value
   const name = elSelect.options[elSelect.selectedIndex].text
+
   handleOutcome(name, sum)
 }
-
 // const elInputIncome = document.querySelector('#income-input')
 // const elInputOutcome = document.querySelector('#outcome-input')
 const elButtonConfirmIncome = document.querySelector('#button-income')
@@ -74,3 +73,9 @@ const elButtonConfirmOutcome = document.querySelector('#button-outcome')
 // elInputOutcome.oninput = onInputTextOutcome
 elButtonConfirmIncome.onclick = onClickConfirmIncome
 elButtonConfirmOutcome.onclick = onClickConfirmOutcome
+
+// После инициализации
+renderBalance(balance)
+renderBoxIncome()
+renderBoxOutcome()
+renderHistory() // добавь
