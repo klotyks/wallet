@@ -1,4 +1,3 @@
-// баланс ЗАВИСИТ от массива incomes и outcomes
 let balance = 0
 
 const incomes = []
@@ -25,25 +24,3 @@ function updateBalanceAfterIncome(amount) {
 function updateBalanceAfterOutcome(amount) {
   balance -= amount
 }
-
-// ??
-// function history(array) {
-//   return array.reduce((acc, item) => acc + item.amount, 0)
-// }
-
-/**
- * ТЕСТЫ:
- */
-
-// incomes
-// createIncome('зарплата', 42)
-// incomes
-// balance
-
-// outcomes
-// createOutcome('конфеты', 33)
-// outcomes
-// balance
-
-// console.log(history(incomes))
-// console.log(history(outcomes))

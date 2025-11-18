@@ -43,7 +43,7 @@ function renderHistory() {
       category: transaction.category,
       amount: transaction.amount,
     })
-    elLi.textContent = `${index + 1}. ${elLi.textContent}` // нумеруем
+    elLi.textContent = `${index + 1}. ${elLi.textContent}`
     elOl.appendChild(elLi)
   })
 }
@@ -64,18 +64,14 @@ function onClickConfirmOutcome() {
 
   handleOutcome(name, sum)
 }
-// const elInputIncome = document.querySelector('#income-input')
-// const elInputOutcome = document.querySelector('#outcome-input')
+
 const elButtonConfirmIncome = document.querySelector('#button-income')
 const elButtonConfirmOutcome = document.querySelector('#button-outcome')
 
-// elInputIncome.oninput = onInputTextIncome
-// elInputOutcome.oninput = onInputTextOutcome
 elButtonConfirmIncome.onclick = onClickConfirmIncome
 elButtonConfirmOutcome.onclick = onClickConfirmOutcome
 
-// После инициализации
 renderBalance(balance)
 renderBoxIncome()
 renderBoxOutcome()
-renderHistory() // добавь
+renderHistory()

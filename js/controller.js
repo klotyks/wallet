@@ -11,10 +11,10 @@ function handleOutcome(name, amount) {
 }
 
 function handleIncome(category, amount) {
-  createIncome(category, +amount) // +amount → number
+  createIncome(category, +amount)
   renderBalance(balance)
   renderBoxIncome()
-  renderHistory() // новая функция
+  renderHistory()
 }
 
 function handleOutcome(category, amount) {
@@ -23,11 +23,3 @@ function handleOutcome(category, amount) {
   renderBoxOutcome()
   renderHistory()
 }
-// function handleControlHistoryIncome(arrayIncome) {
-//   renderHistoryListIncome(arrayIncome)
-
-// }
-
-// function handleControlHistoryOutcome(arrayOutcome) {
-//   renderHistoryListOutcome(arrayOutcome)
-// }
