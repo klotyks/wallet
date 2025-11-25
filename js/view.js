@@ -24,6 +24,10 @@ function generateHistoryList({ type, category, amount }) {
   return elLi
 }
 
+function renderTransactionsList(transactions) {
+  //
+}
+
 function renderHistoryListIncome(incomes) {
   const elOl = document.querySelector('ol-history')
   elOl.innerHTML = ''
@@ -56,6 +60,15 @@ function onClickConfirmIncome() {
 
   handleIncome(name, sum) // передаём имя и сумму
 }
+
+// СЛУШАТЕЛЬ СОБЫТИЙ - event listener
+// [выковыриваем данные, которые ввел юзер] и отправляем в контроллер
+// РЕНДЕР - render
+// перерисовывает html часть страницы
+// ГЕНЕРАТОР - generator
+// генератор - генерирует html код
+
+onClickButtonAddOutcome(e)
 function onClickConfirmOutcome() {
   const elInputOutcome = document.querySelector('#outcome-input')
   const sum = elInputOutcome.value
