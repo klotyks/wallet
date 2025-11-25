@@ -43,7 +43,7 @@ function renderHistory() {
       category: transaction.category,
       amount: transaction.amount,
     })
-    elLi.textContent = `${index + 1}. ${elLi.textContent}`
+    elLi.textContent = `${elLi.textContent}`
     elOl.appendChild(elLi)
   })
 }
