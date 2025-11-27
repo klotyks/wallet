@@ -69,6 +69,7 @@ function onClickConfirmIncome() {
 // генератор - генерирует html код
 
 onClickButtonAddOutcome(e)
+
 function onClickConfirmOutcome() {
   const elInputOutcome = document.querySelector('#outcome-input')
   const sum = elInputOutcome.value
