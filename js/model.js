@@ -1,47 +1,46 @@
-let balance = 0
 const transactions = []
-// const incomes = []
-// const outcomes = []
+const categoriesIncome = ['зарплата', 'подарок', 'контерстрайк2']
+const categoriesExpense = ['конфеты', 'бензин', 'контерстрайк2']
 
-// const historiesList = []
-// const historyItem = {}
-// const peoplesList = []
-// const people = {}
+function addCategoryIncome(category) {
+  categoriesIncome.push(category)
+}
+function addCategoryExpense(category) {
+  categoriesExpense.push(category)
+}
 
-// КОНВЕРГЕНЦИЯ
-
-// function createIncome(category, amount) {
-//   const income = { category, amount, type: 'Income' }
-//                  { category, amount, type: 'Outcome' }
-//                  // ОДИНАКОВЫЕ ПО СТРУКТУРЕ
-//                  // называем эту структуру одинаковым словом
-//   incomes.push(income)
-//   transactions.push(income) // добавляем в общий массив
-//   chto_bi_bilo.push(income)
-//   updateBalanceAfterIncome(amount)
-// }
-
-// function createOutcome(category, amount) {
-//   const outcome = { category, amount, type: 'Outcome' }
-//   outcomes.push(outcome)
-//   transactions.push(outcome)
-//   updateBalanceAfterOutcome(amount)
-// }
+function getBalance() {
+  let result = 0
+  for (const transaction of transactions) {
+    if (transaction.type === 'income') result += transaction.amount
+    else result -= transaction.amount
+  }
+  return result
+}
 
 function createTransaction(category, amount, type) {
-  const transaction = { category, amount, type }
+  return { category, amount, type }
+}
+
+function addTransaction(category, amount, type) {
+  const transaction = createTransaction(category, amount, type)
   transactions.push(transaction)
-
-  if (type === 'income') {
-    updateBalanceAfterIncome(amount)
-  } else {
-    updateBalanceAfterOutcome(amount)
-  }
 }
 
-function updateBalanceAfterIncome(amount) {
-  balance += amount
-}
-function updateBalanceAfterOutcome(amount) {
-  balance -= amount
-}
+// TESTS
+categoriesIncome
+addCategoryIncome('нашел')
+categoriesIncome
+
+categoriesExpense
+addCategoryExpense('потерял')
+categoriesExpense
+
+//
+
+// addTransaction('конфеты', 500, 'expense')
+// addTransaction('контерстрайк2', 300, 'income')
+// console.log(getBalance())
+// transactions[0].amount = 1001
+// transactions
+// console.log(getBalance())
