@@ -3,6 +3,15 @@ function renderBalance(sum) {
   elBalance.textContent = sum
 }
 
+function renderCategoryIncome(categoriesIncomes) {
+  const elIncomeA = document.querySelector('#income-value-a')
+  const elIncomeB = document.querySelector('#income-value-b')
+  const elIncomeC = document.querySelector('#income-value-c')
+  elIncomeA.textContent = categoriesIncomes[0]
+  elIncomeB.textContent = categoriesIncomes[1]
+  elIncomeC.textContent = categoriesIncomes[2]
+}
+
 function renderBoxIncome() {
   const elInputIncome = document.querySelector('#income-input')
   elInputIncome.value = ''
@@ -25,7 +34,8 @@ function generateHistoryList({ type, category, amount }) {
 }
 
 function renderTransactionsList(transactions) {
-  //
+  const elOl = document.querySelector('#ol-history')
+  elOl.innerHTML = ''
 }
 
 function renderHistoryListIncome(incomes) {
@@ -39,7 +49,7 @@ function renderHistoryListIncome(incomes) {
 
 function renderHistory() {
   const elOl = document.querySelector('#ol-history')
-  elOl.innerHTML = '' // очищаем
+  elOl.innerHTML = ''
 
   transactions.forEach((transaction, index) => {
     const elLi = generateHistoryList({
@@ -68,7 +78,7 @@ function onClickConfirmIncome() {
 // ГЕНЕРАТОР - generator
 // генератор - генерирует html код
 
-onClickButtonAddOutcome(e)
+// onClickButtonAddOutcome(e)
 
 function onClickConfirmOutcome() {
   const elInputOutcome = document.querySelector('#outcome-input')
@@ -85,7 +95,8 @@ const elButtonConfirmOutcome = document.querySelector('#button-outcome')
 elButtonConfirmIncome.onclick = onClickConfirmIncome
 elButtonConfirmOutcome.onclick = onClickConfirmOutcome
 
-renderBalance(balance)
+// renderBalance(balance)
+// renderCategoryIncome(categoriesIncomes)
 renderBoxIncome()
 renderBoxOutcome()
 renderHistory()

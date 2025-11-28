@@ -1,12 +1,12 @@
 const transactions = []
-const categoriesIncome = ['зарплата', 'подарок', 'контерстрайк2']
-const categoriesExpense = ['конфеты', 'бензин', 'контерстрайк2']
+const categoriesIncomes = ['зарплата', 'подарок', 'контерстрайк2']
+const categoriesExpenses = ['конфеты', 'бензин', 'контерстрайк2']
 
 function addCategoryIncome(category) {
-  categoriesIncome.push(category)
+  categoriesIncomes.push(category)
 }
 function addCategoryExpense(category) {
-  categoriesExpense.push(category)
+  categoriesExpenses.push(category)
 }
 
 function getBalance() {
@@ -28,13 +28,13 @@ function addTransaction(category, amount, type) {
 }
 
 // TESTS
-categoriesIncome
+categoriesIncomes
 addCategoryIncome('нашел')
-categoriesIncome
+categoriesIncomes
 
-categoriesExpense
+categoriesExpenses
 addCategoryExpense('потерял')
-categoriesExpense
+categoriesExpenses
 
 //
 
