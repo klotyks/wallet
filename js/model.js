@@ -1,12 +1,19 @@
 const transactions = []
-const categoriesIncomes = ['зарплата', 'подарок', 'контерстрайк2']
-const categoriesExpenses = ['конфеты', 'бензин', 'контерстрайк2']
+let categoriesIncomes = ['зарплата', 'подарок', 'контерстрайк2']
+let categoriesExpenses = ['конфеты', 'бензин', 'контерстрайк2']
 
 function addCategoryIncome(category) {
   categoriesIncomes.push(category)
 }
 function addCategoryExpense(category) {
   categoriesExpenses.push(category)
+}
+
+function removeCategoryIncome(category) {
+  categoriesIncomes = categoriesIncomes.filter(c => c !== category)
+}
+function removeCategoryExpense(category) {
+  categoriesExpenses = categoriesExpenses.filter(c => c !== category)
 }
 
 function getBalance() {
@@ -35,6 +42,10 @@ categoriesIncomes
 categoriesExpenses
 addCategoryExpense('потерял')
 categoriesExpenses
+
+categoriesIncomes
+removeCategoryIncome('контерстрайк2')
+categoriesIncomes
 
 //
 
