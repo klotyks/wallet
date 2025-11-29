@@ -1,25 +1,19 @@
-function handleIncome(name, amount) {
-  createIncome(name, +amount)
-  renderBalance(balance)
-  renderBoxIncome()
-}
-
-function handleOutcome(name, amount) {
-  createOutcome(name, +amount)
-  renderBalance(balance)
-  renderBoxOutcome()
+function handleLoadApp() {
+  renderApp()
+  renderBalance(getBalance())
+  renderBoxIncome(categoriesIncomes)
+  renderBoxExpense(categoriesExpenses)
+  // renderHistory()
 }
 
 function handleIncome(category, amount) {
-  createIncome(category, +amount)
-  renderBalance(balance)
-  renderBoxIncome()
-  renderHistory()
+  createTransaction(category, +amount, 'income')
+  renderBalance(getBalance())
 }
 
 function handleOutcome(category, amount) {
-  createOutcome(category, +amount)
-  renderBalance(balance)
-  renderBoxOutcome()
-  renderHistory()
+  createTransaction(category, +amount, 'expense')
+  renderBalance(getBalance())
 }
+
+console.log('controlla')

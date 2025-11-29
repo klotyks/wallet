@@ -11,7 +11,7 @@
       crossorigin="anonymous"
     />
   </head>
-  <body>
+  <body onload="onLoadApp()">
     <div class="container p-3 mb-2 bg-dark text-white rounded">
       <div class="container px-4">
         <div class="row gx-5">
@@ -33,10 +33,7 @@
                 <div><h2>Income</h2></div>
                 <div class="input-group-sm mb-3">
                   <select id="inputGroupSelect01" class="form-select">
-                    <!-- <option selected>Choose income category</option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option> -->
+                    <option selected>Choose income category</option>
                   </select>
                   <div class="input-group input-group-sm mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-sm"
@@ -66,9 +63,6 @@
                 <div class="input-group-sm mb-3">
                   <select id="inputGroupSelect02" class="form-select">
                     <option selected>Choose expence category</option>
-                    <option value="1">Food</option>
-                    <option value="2">Shopping</option>
-                    <option value="3">Online</option>
                   </select>
                   <div class="input-group input-group-sm mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-sm"
@@ -118,7 +112,9 @@
     ></script>
 
     <script src="/js/model.js"></script>
-    <script src="/js/view.js"></script>
     <script src="/js/controller.js"></script>
+    <script src="/js/view/generate.js"></script>
+    <script src="/js/view/render.js"></script>
+    <script src="/js/view/on.js"></script>
   </body>
 </html>

@@ -1,6 +1,12 @@
-const transactions = []
+const transactions = [{ category: 'test', amount: Infinity, type: 'income' }]
 let categoriesIncomes = ['зарплата', 'подарок', 'контерстрайк2']
 let categoriesExpenses = ['конфеты', 'бензин', 'контерстрайк2']
+
+console.log('before model error')
+
+lol
+
+console.log('after model error')
 
 function addCategoryIncome(category) {
   categoriesIncomes.push(category)
