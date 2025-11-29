@@ -1,29 +1,28 @@
-function renderBalance(sum) {
-  const elBalance = document.querySelector('#span-balance')
-  elBalance.textContent = sum
-}
+// function renderBalance(sum) {
+//   const elBalance = document.querySelector('#span-balance')
+//   elBalance.textContent = sum
+// }
 
-function renderCategoryIncome(categoriesIncomes) {
-  const elIncomeA = document.querySelector('#income-value-a')
-  const elIncomeB = document.querySelector('#income-value-b')
-  const elIncomeC = document.querySelector('#income-value-c')
-  elIncomeA.textContent = categoriesIncomes[0]
-  elIncomeB.textContent = categoriesIncomes[1]
-  elIncomeC.textContent = categoriesIncomes[2]
-}
+// function renderCategoryIncome(categoriesIncomes) {}
 
-function renderBoxIncome() {
+function renderBoxIncome(categoriesIncomes) {
   const elInputIncome = document.querySelector('#income-input')
   elInputIncome.value = ''
   const elSelect = document.querySelector('#inputGroupSelect01')
   elSelect.selectedIndex = 0
+  categoriesIncomes.forEach(cat => {
+    elSelect.appendChild(generateOption(cat))
+  })
 }
 
-function renderBoxOutcome() {
+function renderBoxExpense(categoriesExpenses) {
   const elInputOutcome = document.querySelector('#outcome-input')
   elInputOutcome.value = ''
   const elSelect = document.querySelector('#inputGroupSelect02')
   elSelect.selectedIndex = 0
+  categoriesExpenses.forEach(cat => {
+    elSelect.appendChild(generateOption(cat))
+  })
 }
 
 function generateHistoryList({ type, category, amount }) {
@@ -33,19 +32,29 @@ function generateHistoryList({ type, category, amount }) {
   return elLi
 }
 
+function generateOption(category) {
+  const elOption = document.createElement('option')
+  elOption.textContent = category
+  return elOption
+}
+
 function renderTransactionsList(transactions) {
   const elOl = document.querySelector('#ol-history')
   elOl.innerHTML = ''
-}
-
-function renderHistoryListIncome(incomes) {
-  const elOl = document.querySelector('ol-history')
-  elOl.innerHTML = ''
-  for (const income of incomes) {
-    const elLi = generateHistoryList(income)
+  for (const transaction of transactions) {
+    const elLi = generateHistoryList(transaction)
     elOl.appendChild(elLi)
   }
 }
+
+// function renderHistoryListIncome(incomes) {
+//   const elOl = document.querySelector('ol-history')
+//   elOl.innerHTML = ''
+//   for (const income of incomes) {
+//     const elLi = generateHistoryList(income)
+//     elOl.appendChild(elLi)
+//   }
+// }
 
 function renderHistory() {
   const elOl = document.querySelector('#ol-history')
@@ -98,5 +107,5 @@ elButtonConfirmOutcome.onclick = onClickConfirmOutcome
 // renderBalance(balance)
 // renderCategoryIncome(categoriesIncomes)
 renderBoxIncome()
-renderBoxOutcome()
+renderBoxExpence()
 renderHistory()
