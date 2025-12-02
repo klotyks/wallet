@@ -1,4 +1,4 @@
-const transactions = [{}]
+const transactions = []
 let categoriesIncomes = ['зарплата', 'подарок', 'контерстрайк2']
 let categoriesExpenses = ['конфеты', 'бензин', 'контерстрайк2']
 
@@ -19,8 +19,10 @@ function removeCategoryExpense(category) {
 function getBalance() {
   let result = 0
   for (const transaction of transactions) {
-    if (transaction.type === 'income') result += transaction.amount
-    else result -= transaction.amount
+    if (transaction.amount) {
+      if (transaction.type === 'income') result += transaction.amount
+      else result -= transaction.amount
+    }
   }
   return result
 }
@@ -46,8 +48,6 @@ categoriesExpenses
 categoriesIncomes
 removeCategoryIncome('контерстрайк2')
 categoriesIncomes
-
-//
 
 // addTransaction('конфеты', 500, 'expense')
 // addTransaction('контерстрайк2', 300, 'income')

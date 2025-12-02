@@ -3,14 +3,14 @@ function onLoadApp() {
   handleLoadApp()
 }
 
-function onClickAddIncome() {
+function onClickButtonAddIncome() {
   console.log('test')
   const elInputIncome = document.querySelector('#input-income')
   const elSelect = document.querySelector('#select-category-income')
   const sum = elInputIncome.value
   const name = elSelect.value
 
-  handleIncome(name, sum)
+  handleIncomeAdd(name, sum)
 }
 
 function onClickAddExpense() {

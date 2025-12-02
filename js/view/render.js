@@ -1,7 +1,7 @@
 function renderApp() {
   const elButtonAddIncome = document.querySelector('#button-income')
   const elButtonAddExpense = document.querySelector('#button-expense')
-  elButtonAddIncome.onclick = onClickAddIncome
+  elButtonAddIncome.onclick = onClickButtonAddIncome
   elButtonAddExpense.onclick = onClickAddExpense
 }
 
@@ -12,8 +12,10 @@ function renderBalance(sum) {
 
 function renderBoxIncome(categoriesIncomes) {
   const elInputIncome = document.querySelector('#input-income')
-  elInputIncome.value = ''
   const elSelect = document.querySelector('#select-category-income')
+  elInputIncome.value = ''
+  elSelect.innerHTML = ''
+  elSelect.appendChild(generateOption('Choose income category'))
   elSelect.selectedIndex = 0
   categoriesIncomes.forEach(cat => {
     elSelect.appendChild(generateOption(cat))

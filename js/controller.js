@@ -5,16 +5,15 @@ function handleLoadApp() {
   renderBoxExpense(categoriesExpenses)
 }
 
-function handleIncome(category, amount) {
-  createTransaction(category, +amount, 'income')
-  addCategoryIncome(category)
+function handleIncomeAdd(category, amount) {
+  console.log('handleIncomeAdd')
+  addTransaction(category, +amount, 'income')
   renderBalance(getBalance())
   renderTransactionsList(transactions)
 }
 
 function handleExpense(category, amount) {
-  createTransaction(category, +amount, 'expense')
-  addCategoryExpense(category)
+  addTransaction(category, +amount, 'expense')
   renderBalance(getBalance())
   renderTransactionsList(transactions)
 }
