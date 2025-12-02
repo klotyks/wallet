@@ -11,9 +11,9 @@ function renderBalance(sum) {
 }
 
 function renderBoxIncome(categoriesIncomes) {
-  const elInputIncome = document.querySelector('#income-input')
+  const elInputIncome = document.querySelector('#input-income')
   elInputIncome.value = ''
-  const elSelect = document.querySelector('#inputGroupSelect01')
+  const elSelect = document.querySelector('#select-category-income')
   elSelect.selectedIndex = 0
   categoriesIncomes.forEach(cat => {
     elSelect.appendChild(generateOption(cat))
@@ -21,9 +21,9 @@ function renderBoxIncome(categoriesIncomes) {
 }
 
 function renderBoxExpense(categoriesExpenses) {
-  const elInputOutcome = document.querySelector('#outcome-input')
-  elInputOutcome.value = ''
-  const elSelect = document.querySelector('#inputGroupSelect02')
+  const elInputExpense = document.querySelector('#input-expense')
+  elInputExpense.value = ''
+  const elSelect = document.querySelector('#select-category-expense')
   elSelect.selectedIndex = 0
   categoriesExpenses.forEach(cat => {
     elSelect.appendChild(generateOption(cat))

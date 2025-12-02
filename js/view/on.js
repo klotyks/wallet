@@ -5,8 +5,8 @@ function onLoadApp() {
 
 function onClickAddIncome() {
   console.log('test')
-  const elInputIncome = document.querySelector('#income-input')
-  const elSelect = document.querySelector('#inputGroupSelect01')
+  const elInputIncome = document.querySelector('#input-income')
+  const elSelect = document.querySelector('#select-category-income')
   const sum = elInputIncome.value
   const name = elSelect.value
 
@@ -14,9 +14,9 @@ function onClickAddIncome() {
 }
 
 function onClickAddExpense() {
-  const elInputOutcome = document.querySelector('#expense-input')
-  const elSelect = document.querySelector('#inputGroupSelect02')
-  const sum = elInputOutcome.value
+  const elInputExpense = document.querySelector('#input-expense')
+  const elSelect = document.querySelector('#select-category-expense')
+  const sum = elInputExpense.value
   const name = elSelect.value
 
   handleExpense(name, sum)
