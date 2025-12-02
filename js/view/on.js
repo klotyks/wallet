@@ -3,23 +3,23 @@ function onLoadApp() {
   handleLoadApp()
 }
 
-function onClickConfirmIncome() {
+function onClickAddIncome() {
+  console.log('test')
   const elInputIncome = document.querySelector('#income-input')
   const elSelect = document.querySelector('#inputGroupSelect01')
-
   const sum = elInputIncome.value
   const name = elSelect.value
 
-  handleIncome(name, sum) // передаём имя и сумму
+  handleIncome(name, sum)
 }
 
-function onClickConfirmOutcome() {
-  const elInputOutcome = document.querySelector('#outcome-input')
-  const sum = elInputOutcome.value
+function onClickAddExpense() {
+  const elInputOutcome = document.querySelector('#expense-input')
   const elSelect = document.querySelector('#inputGroupSelect02')
-  const name = elSelect.options[elSelect.selectedIndex].text
+  const sum = elInputOutcome.value
+  const name = elSelect.value
 
-  handleOutcome(name, sum)
+  handleExpense(name, sum)
 }
 
 console.log('ff')

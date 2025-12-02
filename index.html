@@ -11,7 +11,7 @@
       crossorigin="anonymous"
     />
   </head>
-  <body onload="onLoadApp()">
+  <body onload="onLoadApp()" class="bg-secondary">
     <div class="container p-3 mb-2 bg-dark text-white rounded">
       <div class="container px-4">
         <div class="row gx-5">
@@ -59,10 +59,10 @@
             </div>
             <div class="col bg-dark bg-gradient border border-dark rounded">
               <div class="p-3">
-                <div><h2>Outcome</h2></div>
+                <div><h2>Expense</h2></div>
                 <div class="input-group-sm mb-3">
                   <select id="inputGroupSelect02" class="form-select">
-                    <option selected>Choose expence category</option>
+                    <option selected>Choose expense category</option>
                   </select>
                   <div class="input-group input-group-sm mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-sm"
@@ -70,7 +70,7 @@
                     >
                     <input
                       type="text"
-                      id="outcome-input"
+                      id="expense-input"
                       id="elInputOutcome"
                       class="form-control"
                       aria-label="Sizing example input"
@@ -79,7 +79,7 @@
                     <button
                       type="button"
                       class="btn btn-primary"
-                      id="button-outcome"
+                      id="button-expense"
                       id="elInputOutcome"
                     >
                       Confirm
@@ -97,9 +97,9 @@
         </div>
         <div class="list">
           <ol class="list-group list-group-numbered" id="ol-history">
+            <!-- <li class="list-group-item">A list item</li>
             <li class="list-group-item">A list item</li>
-            <li class="list-group-item">A list item</li>
-            <li class="list-group-item">A list item</li>
+            <li class="list-group-item">A list item</li> -->
           </ol>
         </div>
       </div>

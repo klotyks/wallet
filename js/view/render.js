@@ -1,8 +1,8 @@
 function renderApp() {
-  const elButtonConfirmIncome = document.querySelector('#button-income')
-  const elButtonConfirmOutcome = document.querySelector('#button-outcome')
-  elButtonConfirmIncome.onclick = onClickConfirmIncome
-  elButtonConfirmOutcome.onclick = onClickConfirmOutcome
+  const elButtonAddIncome = document.querySelector('#button-income')
+  const elButtonAddExpense = document.querySelector('#button-expense')
+  elButtonAddIncome.onclick = onClickAddIncome
+  elButtonAddExpense.onclick = onClickAddExpense
 }
 
 function renderBalance(sum) {

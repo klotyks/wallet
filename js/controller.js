@@ -3,17 +3,20 @@ function handleLoadApp() {
   renderBalance(getBalance())
   renderBoxIncome(categoriesIncomes)
   renderBoxExpense(categoriesExpenses)
-  // renderHistory()
 }
 
 function handleIncome(category, amount) {
   createTransaction(category, +amount, 'income')
+  addCategoryIncome(category)
   renderBalance(getBalance())
+  renderTransactionsList(transactions)
 }
 
-function handleOutcome(category, amount) {
+function handleExpense(category, amount) {
   createTransaction(category, +amount, 'expense')
+  addCategoryExpense(category)
   renderBalance(getBalance())
+  renderTransactionsList(transactions)
 }
 
 console.log('controlla')
