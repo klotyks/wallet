@@ -24,8 +24,10 @@ function renderBoxIncome(categoriesIncomes) {
 
 function renderBoxExpense(categoriesExpenses) {
   const elInputExpense = document.querySelector('#input-expense')
-  elInputExpense.value = ''
   const elSelect = document.querySelector('#select-category-expense')
+  elInputExpense.value = ''
+  elSelect.innerHTML = ''
+  elSelect.appendChild(generateOption('Choose expense category'))
   elSelect.selectedIndex = 0
   categoriesExpenses.forEach(cat => {
     elSelect.appendChild(generateOption(cat))

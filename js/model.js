@@ -32,6 +32,9 @@ function createTransaction(category, amount, type) {
 }
 
 function addTransaction(category, amount, type) {
+  if (amount === 0) return
+  if (category === 'Choose income category') return
+  if (category === 'Choose expense category') return
   const transaction = createTransaction(category, amount, type)
   transactions.push(transaction)
 }

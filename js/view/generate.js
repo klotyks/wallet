@@ -10,3 +10,7 @@ function generateOption(category) {
   elOption.textContent = category
   return elOption
 }
+
+function generateButtonDeleteCategory(e) {
+  // body
+}

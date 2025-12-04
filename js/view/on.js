@@ -4,7 +4,6 @@ function onLoadApp() {
 }
 
 function onClickButtonAddIncome() {
-  console.log('test')
   const elInputIncome = document.querySelector('#input-income')
   const elSelect = document.querySelector('#select-category-income')
   const sum = elInputIncome.value
